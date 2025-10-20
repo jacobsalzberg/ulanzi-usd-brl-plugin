@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USD/BRL Exchange Rate Plugin</title>
+  <style>
+    /**
+     * Main service requires Source Han Sans SC font for canvas drawing operations
+     */
+    html,
+    body {
+      font-family: 'Source Han Sans SC', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UlanziDeck Common Library References -->
+  <script src="../libs/js/constants.js"></script>
+  <script src="../libs/js/eventEmitter.js"></script>
+  <script src="../libs/js/timers.js"></script>
+  <script src="../libs/js/utils.js"></script>
+  <script src="../libs/js/ulanzideckApi.js"></script>
+
+  <!-- Plugin JavaScript Modules -->
+  <script src="./actions/SimpleAPI.js?v=20251104-1747"></script>
+  <script src="./actions/ExchangeRateDisplay.js?v=20251104-1747"></script>
+
+  <!-- Main Service Logic -->
+  <script src="./app.js?v=20251104-1747"></script>
+  
+</body>
+</html>
