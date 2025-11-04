@@ -8,6 +8,15 @@ A real-time USD to BRL (Brazilian Real) exchange rate display plugin for Ulanzi 
 
 > ⚠️ **Important Note**: This plugin is not yet published in the official Ulanzi Plugin Store. As a workaround, you need to keep the `app.html` page open in your browser for the plugin to work. Once published officially, this won't be necessary - the plugin will run as a background service automatically.
 
+## 📦 What's in this Repository
+
+- **`com.ulanzi.usdbrlex.ulanziPlugin/`** - The main USD/BRL plugin (this is what you need!)
+- **`demo/`** - Example plugins for reference
+- **`UlanziDeckSimulator/`** - Local testing environment
+- **`com.ulanzi.cputemp.ulanziPlugin/`** - Bonus CPU temperature plugin
+
+> 💡 **Just want the USD/BRL plugin?** Download only the `com.ulanzi.usdbrlex.ulanziPlugin` folder.
+
 ## ✨ Features
 
 - 📊 **Real-time Exchange Rates** - Shows current USD/BRL rate (~5.39 BRL)
@@ -19,36 +28,46 @@ A real-time USD to BRL (Brazilian Real) exchange rate display plugin for Ulanzi 
 
 ## 🚀 Quick Start
 
-### For First-Time Users
+### Installation
 
-1. **Download this plugin** to your Ulanzi Deck plugins folder:
-   ```
-   %APPDATA%\Ulanzi\UlanziDeck\Plugins\
-   ```
+1. **Download the plugin folder**:
+   - Clone this repository or download as ZIP
+   - Extract the `com.ulanzi.usdbrlex.ulanziPlugin` folder
 
-2. **Open the plugin service** in your browser:
-   ```
-   %APPDATA%\Ulanzi\UlanziDeck\Plugins\com.ulanzi.usdbrlex.ulanziPlugin\plugin\app.html
-   ```
+2. **Copy to Ulanzi plugins folder**:
+   - Open File Explorer and paste this path in the address bar:
+     ```
+     %APPDATA%\Ulanzi\UlanziDeck\Plugins\
+     ```
+   - Copy the entire `com.ulanzi.usdbrlex.ulanziPlugin` folder here
 
-3. **⚠️ Keep the browser tab open** - This is a temporary workaround since the plugin isn't published yet. The plugin needs this page running to communicate with your Ulanzi Deck.
+3. **Start the plugin service**:
+   - Navigate to the plugin folder you just copied
+   - Double-click `start-plugin-service.bat`
+   - A browser window will open - **keep it open**
 
-4. **Add the plugin** to your Ulanzi Deck in the Ulanzi Studio app
+4. **Add to your deck**:
+   - Open Ulanzi Studio app
+   - Find "USD/BRL Exchange Rate" in the plugin list
+   - Drag it to a button on your deck
 
-5. **Done!** You should see the current USD/BRL rate on your deck
+5. **Done!** You should see the current USD/BRL rate (~5.39) on your deck
 
-> 💡 **Tip**: Use the auto-start feature (see below) to automatically open this page when Windows starts, so you don't have to remember to do it manually.
+> ⚠️ **Important**: Keep the browser tab open for the plugin to work. This is temporary until the plugin is officially published.
 
-### Auto-Start (Recommended Workaround)
+> 💡 **Tip**: Use the auto-start feature (see below) to automatically open this page when Windows starts.
 
-Since the plugin requires the browser page to stay open, you can set it to start automatically with Windows:
+### Auto-Start (Recommended)
 
-1. Run `install-auto-start.bat` from the plugin folder
-2. The plugin service will now open automatically when Windows starts
-3. The browser window will open minimized in the background
+To avoid manually starting the plugin service every time:
+
+1. Navigate to: `%APPDATA%\Ulanzi\UlanziDeck\Plugins\com.ulanzi.usdbrlex.ulanziPlugin\`
+2. Double-click `install-auto-start.bat`
+3. The plugin will now start automatically when Windows boots
+4. The browser window opens minimized in the background
 
 **To remove auto-start:**
-- Run `uninstall-auto-start.bat`
+- Run `uninstall-auto-start.bat` from the same folder
 
 > 📌 **Note**: This workaround won't be needed once the plugin is officially published in the Ulanzi Plugin Store.
 
@@ -95,11 +114,12 @@ com.ulanzi.usdbrlex.ulanziPlugin/
 
 ### Editing the Plugin
 
-1. Edit files in your workspace
-2. Run `sync-plugin.bat` to copy to UlanziDeck folder
-3. Refresh (F5) the app.html page in your browser
-
-See `⚠️ LEIA-ISSO-ANTES-DE-EDITAR.md` for detailed workflow.
+1. Edit files directly in the plugin folder:
+   ```
+   %APPDATA%\Ulanzi\UlanziDeck\Plugins\com.ulanzi.usdbrlex.ulanziPlugin\
+   ```
+2. Refresh (F5) the app.html page in your browser to see changes
+3. Changes take effect immediately
 
 ### API Configuration
 
