@@ -6,6 +6,8 @@ A real-time USD to BRL (Brazilian Real) exchange rate display plugin for Ulanzi 
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+> ⚠️ **Important Note**: This plugin is not yet published in the official Ulanzi Plugin Store. As a workaround, you need to keep the `app.html` page open in your browser for the plugin to work. Once published officially, this won't be necessary - the plugin will run as a background service automatically.
+
 ## ✨ Features
 
 - 📊 **Real-time Exchange Rates** - Shows current USD/BRL rate (~5.39 BRL)
@@ -29,27 +31,43 @@ A real-time USD to BRL (Brazilian Real) exchange rate display plugin for Ulanzi 
    %APPDATA%\Ulanzi\UlanziDeck\Plugins\com.ulanzi.usdbrlex.ulanziPlugin\plugin\app.html
    ```
 
-3. **Keep the browser tab open** - The plugin needs this to work
+3. **⚠️ Keep the browser tab open** - This is a temporary workaround since the plugin isn't published yet. The plugin needs this page running to communicate with your Ulanzi Deck.
 
 4. **Add the plugin** to your Ulanzi Deck in the Ulanzi Studio app
 
 5. **Done!** You should see the current USD/BRL rate on your deck
 
-### Auto-Start (Optional)
+> 💡 **Tip**: Use the auto-start feature (see below) to automatically open this page when Windows starts, so you don't have to remember to do it manually.
 
-To automatically open the plugin service when Windows starts:
+### Auto-Start (Recommended Workaround)
 
-1. Run `install-auto-start.bat`
-2. The plugin will now start automatically
+Since the plugin requires the browser page to stay open, you can set it to start automatically with Windows:
+
+1. Run `install-auto-start.bat` from the plugin folder
+2. The plugin service will now open automatically when Windows starts
+3. The browser window will open minimized in the background
+
+**To remove auto-start:**
+- Run `uninstall-auto-start.bat`
+
+> 📌 **Note**: This workaround won't be needed once the plugin is officially published in the Ulanzi Plugin Store.
 
 ## 📖 How It Works
 
 The plugin uses the [AwesomeAPI](https://economia.awesomeapi.com.br) to fetch USD/BRL exchange rates. It calculates the average between the `bid` (buy) and `high` (daily high) prices to approximate retail exchange rates shown on Google.
 
+**Current Architecture (Unpublished Plugin):**
+- The `app.html` page runs in your browser and acts as a bridge
+- It fetches exchange rates from the API
+- Communicates with Ulanzi Deck via WebSocket
+- Updates the button display in real-time
+
 **API Usage:**
 - 1 request per hour (default)
 - ~720 requests/month
 - Well within the free tier (100,000 requests/month)
+
+> 🔮 **Future**: Once published officially, the plugin will run as a native background service without needing a browser.
 
 ## 🎮 Usage
 
@@ -107,19 +125,28 @@ return { success: true, rate: bid, timestamp: new Date() };
 ## 🐛 Troubleshooting
 
 ### Plugin shows clock icon instead of rate
+**Cause**: The browser page isn't running
 - Make sure `app.html` is open in your browser
-- Run `start-plugin-service.bat`
+- Run `start-plugin-service.bat` to open it
 - Wait 10 seconds and press the physical button
+- Consider using the auto-start feature to avoid this issue
 
 ### Rate doesn't match Google
-- The plugin uses average of bid and high prices
+**This is normal**: The plugin uses average of bid and high prices
 - Should show ~5.39 BRL (close to Google's rate)
 - Rates update in real-time and may vary slightly
+- Different sources may show slightly different rates
 
-### Plugin stops working
-- Close the browser tab with `app.html`
+### Plugin stops working after closing browser
+**Cause**: The plugin needs the browser page to stay open (temporary limitation)
 - Run `start-plugin-service.bat` again
+- Use the auto-start feature to keep it running
+- This limitation will be removed once the plugin is officially published
+
+### Browser page closes accidentally
+- Run `start-plugin-service.bat` to restart
 - The plugin will reconnect automatically
+- Your settings are preserved
 
 ## 🔧 Requirements
 
