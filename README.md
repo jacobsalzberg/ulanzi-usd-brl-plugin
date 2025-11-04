@@ -6,16 +6,16 @@ A real-time USD to BRL (Brazilian Real) exchange rate display plugin for Ulanzi 
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-> ⚠️ **Important Note**: This plugin is not yet published in the official Ulanzi Plugin Store. As a workaround, you need to keep the `app.html` page open in your browser for the plugin to work. Once published officially, this won't be necessary - the plugin will run as a background service automatically.
+> ⚠️ **Important**: This is a community plugin, not officially published in the Ulanzi Plugin Store. You need to manually install it and keep a browser page open for it to work. This is a temporary limitation - if Ulanzi officially publishes this plugin, it will run as a native background service without needing a browser.
 
-## 📦 What's in this Repository
+## 📌 About This Plugin
 
-- **`com.ulanzi.usdbrlex.ulanziPlugin/`** - The main USD/BRL plugin (this is what you need!)
-- **`demo/`** - Example plugins for reference
-- **`UlanziDeckSimulator/`** - Local testing environment
-- **`com.ulanzi.cputemp.ulanziPlugin/`** - Bonus CPU temperature plugin
+This is a **sideloaded plugin** - it works perfectly but requires manual installation. The browser workaround is needed because:
+- The plugin isn't published in the official Ulanzi Plugin Store yet
+- Unpublished plugins can't run as native background services
+- The browser acts as a bridge between the API and your Ulanzi Deck
 
-> 💡 **Just want the USD/BRL plugin?** Download only the `com.ulanzi.usdbrlex.ulanziPlugin` folder.
+**To get this officially published**, you would need to contact Ulanzi and submit it for review. Once approved, users could install it directly from the store and it would run natively without the browser requirement.
 
 ## ✨ Features
 
@@ -30,11 +30,12 @@ A real-time USD to BRL (Brazilian Real) exchange rate display plugin for Ulanzi 
 
 ### Installation
 
-1. **Download the plugin folder**:
-   - Clone this repository or download as ZIP
-   - Extract the `com.ulanzi.usdbrlex.ulanziPlugin` folder
+1. **Download the plugin**:
+   - Click the green "Code" button → "Download ZIP"
+   - Extract the ZIP file
+   - Find the `com.ulanzi.usdbrlex.ulanziPlugin` folder
 
-2. **Copy to Ulanzi plugins folder**:
+2. **Copy to your Ulanzi plugins folder**:
    - Open File Explorer and paste this path in the address bar:
      ```
      %APPDATA%\Ulanzi\UlanziDeck\Plugins\
@@ -170,10 +171,25 @@ return { success: true, rate: bid, timestamp: new Date() };
 
 ## 🔧 Requirements
 
-- **Ulanzi Deck** device
+- **Ulanzi Deck** device (any model)
 - **Ulanzi Studio** app installed
-- **Web browser** (Chrome, Edge, Firefox)
+- **Web browser** (Chrome, Edge, or Firefox)
 - **Windows** (tested on Windows 10/11)
+- **Internet connection** for exchange rate updates
+
+## 🏪 Getting This Into the Official Store
+
+Want to see this plugin in the Ulanzi Plugin Store? Here's what would need to happen:
+
+1. **Contact Ulanzi**: Reach out to Ulanzi support or their developer team
+2. **Submit for Review**: They would review the code and functionality
+3. **Approval**: Once approved, they would publish it in their store
+4. **Native Service**: After publication, it would run as a background service (no browser needed!)
+
+If you'd like to help make this happen, consider:
+- Starring this repository to show interest
+- Contacting Ulanzi to request this plugin
+- Sharing feedback and improvements
 
 ## 📝 License
 

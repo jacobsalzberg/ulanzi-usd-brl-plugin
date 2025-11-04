@@ -1,1 +1,0 @@
-C:\Users\jacob\AppData\Roaming\Ulanzi\UlanziDeck\Plugins
