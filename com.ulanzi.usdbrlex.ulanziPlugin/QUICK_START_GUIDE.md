@@ -1,8 +1,10 @@
 # USD/BRL Exchange Rate Plugin - Quick Start Guide
 
-## 🚀 Auto-Start Solution
+> ⚠️ **Important**: This plugin is not yet published in the Ulanzi Plugin Store. You need to keep the browser page open for it to work. This is a temporary workaround - once officially published, it will run as a background service automatically.
 
-To make your plugin load instantly when Ulanzi Studio starts:
+## 🚀 Auto-Start Solution (Workaround)
+
+Since the plugin requires a browser page to stay open, here's how to make it start automatically:
 
 ### Option 1: Manual Auto-Start (Recommended)
 1. **Double-click** `start-plugin-service.bat` in your plugin folder
@@ -40,9 +42,12 @@ To change the refresh interval:
 ## 🔧 Troubleshooting
 
 **If you see a clock icon instead of numbers:**
-1. Run `start-plugin-service.bat` 
-2. Wait 10 seconds for the service to connect
-3. Press the physical button to trigger a manual refresh
+- **Cause**: The browser page isn't running (temporary limitation)
+- **Solution**: 
+  1. Run `start-plugin-service.bat` 
+  2. Wait 10 seconds for the service to connect
+  3. Press the physical button to trigger a manual refresh
+- **Prevention**: Use the auto-start feature above
 
 **If the rate seems wrong:**
 - The plugin uses AwesomeAPI (economia.awesomeapi.com.br)
@@ -50,10 +55,13 @@ To change the refresh interval:
 - Should show ~5.39 BRL (close to Google's rate)
 - Rates update in real-time and may vary slightly
 
-**If the plugin stops working:**
-1. Close the browser tab with the plugin service
-2. Run `start-plugin-service.bat` again
-3. The plugin will reconnect automatically
+**If the plugin stops working after closing browser:**
+- **Cause**: The plugin needs the browser page to stay open (until officially published)
+- **Solution**: 
+  1. Run `start-plugin-service.bat` again
+  2. The plugin will reconnect automatically
+  3. Your settings are preserved
+- **Future**: This won't be needed once the plugin is in the official store
 
 ## 💡 Pro Tips
 
