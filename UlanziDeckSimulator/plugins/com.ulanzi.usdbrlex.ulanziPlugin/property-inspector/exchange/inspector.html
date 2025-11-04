@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover"
+  />
+  <title>USD/BRL Exchange Rate Settings</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+
+    <form id="property-inspector">
+
+      <div class="udpi-item">
+        <div class="udpi-item-label" data-localize="refresh_interval">Refresh Interval</div>
+        <select class="udpi-item-value select" name="refresh_interval">
+          <option value="1" data-localize="1_minute">1 minute</option>
+          <option value="5" data-localize="5_minutes" selected>5 minutes</option>
+          <option value="10" data-localize="10_minutes">10 minutes</option>
+          <option value="30" data-localize="30_minutes">30 minutes</option>
+        </select>
+      </div>
+
+    </form>
+
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+
+  <script src="./inspector.js"></script>
+  
+</body>
+</html>
