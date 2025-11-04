@@ -7,11 +7,22 @@ bin-release/
 # Other files and folders
 .settings/
 node_modules/
+.vscode/
 .vscode
 .idea
 .DS_Store
 */.DS_Store
 **/.DS_Store
+.kiro/
+
+# Local development files
+⚠️ LEIA-ISSO-ANTES-DE-EDITAR.md
+sync-plugin.bat
+
+# Build artifacts
+*.zip
+*.rar
+*.7z
 
 # Executables
 *.swf
